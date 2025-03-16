@@ -1,0 +1,19 @@
+ {% extends "layout.html" %}
+
+ {% block content %}
+    
+
+  <div class="container row gap-3">
+    {% for tweet in tweets %}
+    <div class="card" style="width: 18rem">
+      {% if tweet.photo %}
+      <img src="{{ tweet.photo.url }}" class="card-img-top" alt="Tweet image"  height="300px" width="800px"/>
+      {% endif %}
+      <div class="card-body ">
+        <h5 class="card-title">{{ tweet.user.username }}</h5>
+        <p class="card-text fw-normal">{{ tweet.text }}</p>
+       {% endfor %}
+      </div>
+    </div>
+</div>
+ {% endblock %}
